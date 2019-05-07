@@ -1,0 +1,36 @@
+language: julia
+os:
+  - linux
+julia:
+  - 1.0
+notifications:
+  email: false
+git:
+  depth: 99999999
+cache:
+  timeout: 1000
+  directories:
+    - downloads
+env:
+  global:
+    - BINARYBUILDER_DOWNLOADS_CACHE=downloads
+    - BINARYBUILDER_AUTOMATIC_APPLE=true
+sudo: required
+
+# Before anything else, get the latest versions of things
+before_script:
+  - julia -e 'using Pkg; pkg"add BinaryBuilder BinaryProvider"'
+
+script:
+  - julia build_tarballs.jl
+
+deploy:
+    provider: releases
+    api_key:
+        secure: 2yqBcA9YSPjzCucMP2jxPM03+wIDt8BgBYxzH8+5O/cGEerOmVr4jZqqRuB5rMtVn0XeH/GRwS2tGoJfV86sNGJXaw5avaINonEqMnyS6KOnEVMo9agsLwCYj1j9tFYyNXu35DlTrjAYyzJrvSDk3EH5LX3kElndmjHGXoiwOJAzmrQ5JrovIOHPYqMweCCxOShuZ1FrIUY388UEgwkO+zXs9nGFkDa9LVYL8BbSG/TgJAE77X/REQ3Oqhv8HtGW480+u6HwCaAo+zD3mKnajy81zRzfphUaUJRICqc5RGY3GFBiroE11m/MGX6nUHcCNwVl5GAVvHZqh47DCtGAaa2Z8ae3hfkUHnWds73LugFPhlIC7iLv6zHC5TjIhOFzlzn/+yOlPqOW/zFU/Da0OMVxPaCpnnjIgVRfZEdQbv5JxbQQCy+BHpXuY2kWndbx0c8Bn4v0q4t+qZ5yIJq4g6XL4cvDq2TIVwLRrwDLeyQ65u/o7qjkMTJ7ZXZ0SsxwHE5XpoiVvA8YQYBteoPQ/k/cVefkrx7hB9Wf1zCKbTj7EdqL9H5pddVArSmp1lZNJ1ZSkHhFTHGa7pNITDTrSVbuFlYLcKFlwbh6Awqk1aNSqB6pcHoHYVBAC5WW92fUA2tWhN+hsDXuuwE+1jzzhDiyNnEa2WXUPPQP6lJzXeY=
+    file_glob: true
+    file: products/*
+    skip_cleanup: true
+    on:
+        repo: JuliaGraphics/XorgBuilder
+        tags: true
