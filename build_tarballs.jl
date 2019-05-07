@@ -59,7 +59,7 @@ sources = [
     "http://xcb.freedesktop.org/dist/libpthread-stubs-0.3.tar.bz2" => "35b6d54e3cc6f3ba28061da81af64b9a92b7b757319098172488a660e3d87299",
     "https://ftp.gnu.org/gnu/pth/pth-2.0.7.tar.gz" => "72353660c5a2caafd601b20e12e75d865fd88f6cf1a088b306a3963f0bc77232",
     "http://xorg.freedesktop.org/releases/individual/util/util-macros-1.19.0.tar.bz2" => "2835b11829ee634e19fa56517b4cfc52ef39acea0cd82e15f68096e27cbed0ba",
-    "ftp://ftp.gnu.org/gnu/gettext/gettext-0.19.tar.gz" => "a9f9c7764bc68782aca57687a1f16c228bc321069c538325923513b841bd847c",
+    "https://ftp.gnu.org/gnu/gettext/gettext-0.19.tar.gz" => "a9f9c7764bc68782aca57687a1f16c228bc321069c538325923513b841bd847c",
     # xorg protocol headers
     "https://www.x.org/pub/individual/proto/bigreqsproto-1.1.2.tar.bz2" => "462116ab44e41d8121bfde947321950370b285a5316612b8fce8334d50751b1e",
     "https://www.x.org/pub/individual/proto/compositeproto-0.4.2.tar.bz2" => "049359f0be0b2b984a8149c966dd04e8c58e6eade2a4a309cf1126635ccd0cfc",
