@@ -22,7 +22,7 @@ before_script:
   - julia -e 'using Pkg; pkg"add BinaryBuilder BinaryProvider"'
 
 script:
-  - julia build_tarballs.jl
+  - julia build_tarballs.jl --verbose
 
 deploy:
     provider: releases
